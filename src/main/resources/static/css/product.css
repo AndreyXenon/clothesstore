@@ -1,0 +1,81 @@
+.content {
+    padding: 0 10%;
+    min-height: calc(100vh - 10rem);
+}
+
+.content * {
+    font-family: Boyarsky, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.img-head {
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.one, .two, .three {
+    width: 28%;
+}
+
+
+.label {
+    font-size: 35px;
+    color: black;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.label span{
+    font-size: 30px;
+
+}
+.two li {
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    list-style: none;
+    border-bottom: 1px solid grey;
+}
+
+.two li .head {
+    margin-left: 2rem;
+}
+
+.margin {
+    margin-top: 2rem;
+}
+
+.info-label {
+    font-size: 30px;
+
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.btn-back {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.btn-back a {
+    text-decoration: none;
+    font-size: 40px;
+    padding: 0.5rem;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 1s;
+}

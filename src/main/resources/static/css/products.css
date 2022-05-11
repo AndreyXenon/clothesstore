@@ -1,0 +1,62 @@
+.content .img-cart {
+    display: block;
+    height: 300px;
+}
+.content .cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+}
+
+/*КОНТЕНТ*/
+.content {
+    min-height: 100vh;
+}
+
+.content a {
+    text-decoration: none;
+}
+/*заголовки*/
+h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    font: 50px Boyarsky;
+    font-weight: bold;
+}
+
+/*карточки меню*/
+
+.carts-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart {
+    width: 500px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.img-cart img {
+    height: 300px;
+    display: block;
+}
+
+/*подписи внизу*/
+.cart p, .cart a {
+    margin: 25px;
+}
+
+.cart p {
+    font: 40px Boyarsky;
+}
+
+
+.cart .price {
+    font-weight: bold;
+}

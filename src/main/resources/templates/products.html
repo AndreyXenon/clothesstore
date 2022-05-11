@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+<div class="wrapper">
+    <!--шапка страницы-->
+    <div class="header">
+        <!--главная надпись-->
+        <div class="header-text">
+            <a class="header-logo" href = "/"><img src="image/logo.png"></a>
+        </div>
+        <!--меню-->
+        <div class="menu">
+            <div class="row">
+                <a href="/products">Товары</a>
+                <a sec:authorize="isAnonymous()" href="/login">Login</a>
+                <a id="lout" sec:authorize="isAuthenticated()" href="/logout">Logout</a>
+                <a href="profile/cart-product"><img src="image/cart.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Товары</h2>
+        <div class="types" th:each="element : ${product}">
+            <div class="carts-type" >
+                <div class="cart">
+                    <div class="img-cart"><img th:src="'/image/' + ${element.image}"></div>
+                    <a th:href="${element.id}"> <p class="name" th:text="${element.name}"></p></a>
+                    <p class="price" th:text="${element.price} + ' руб'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-img">
+            <a href="https://vk.com/xenondrs"><img src="image/vk_logo.png" alt="vk"></a>
+            <a href=""><img src="image/git_logo.png" alt="github"></a>
+            <a href=""><img src="image/telegram_logo.png" alt="telegram"></a><br>
+        </div>
+        <span>2022 &#169 Filin Andrey</span>
+    </div>
+</div>
+</body>
+</html>

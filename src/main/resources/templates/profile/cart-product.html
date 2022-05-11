@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+<div class="wrapper">
+    <!--шапка страницы-->
+    <div class="header">
+        <!--главная надпись-->
+        <div class="header-text">
+            <a class="header-logo" href = "/"><img src="../image/logo.png"></a>
+        </div>
+        <!--меню-->
+        <div class="menu">
+            <div class="row">
+                <a href="/products">Товары</a>
+                <a sec:authorize="isAnonymous()" href="/login">Login</a>
+                <a id="lout" sec:authorize="isAuthenticated()" href="/logout">Logout</a>
+                <a href="profile/cart-product"><img src="../image/cart.png"></a>
+            </div>
+        </div>
+    </div>
+    <h1  class="cart">Корзина</h1>
+    <div class="container">
+        <div class="rowrow" th:each="product : ${user.productList}">
+            <div class="list-group">
+                <span class="a">Изображение</span>
+                <img th:src="@{'/image/' + ${product.image}}" height="100">
+            </div>
+            <br>
+            <div class="list-group">
+                <span class="a">Название</span>
+                <span class="b" th:text="${product.name}"></span>
+            </div>
+            <div class="list-group">
+                <span class="a">Цена</span>
+                <span class="b" th:text="${product.price} + ' руб'"></span>
+            </div>
+        </div>
+    </div>
+    <div class="all">
+        <span class="a" th:text="'Всего:  '+ ${total} + '  руб'"></span>
+    </div>
+
+</div>
+</body>
+</html>

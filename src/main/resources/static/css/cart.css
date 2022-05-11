@@ -1,0 +1,50 @@
+.container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+h1 {
+    text-align: center;
+    font-family: Boyarsky, sans-serif;
+    font-size: 45px;
+}
+
+.rowrow {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.list-group span, .list-group img {
+    display: block;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.a {
+    font-family: Boyarsky, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.b {
+    font-family: Boyarsky, sans-serif;
+    font-size: 20px;
+}
+
+.all span {
+    margin: 30px 20px;
+    font-size: 40px;
+    font-weight: bold;
+}

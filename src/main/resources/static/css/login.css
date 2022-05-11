@@ -1,0 +1,55 @@
+form h2{
+    text-align: center;
+}
+label {
+    font-family: Boyarsky, sans-serif;
+    font-size: 20px;
+}
+#form {
+    display: flex;
+    flex-direction: row;
+}
+.wrapper form{
+    text-align: center;
+}
+
+#column-2 {
+    align-self: center;
+    width: 700px;
+    height: 250px;
+    background-color: #5e5e5e;
+    border-radius: 0 20px 20px 0;
+    margin: 150px 40px 0 0;
+    padding: 0 0 0 20px;
+}
+
+#column-1 {
+    align-self: center;
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    background-color: #7c7c7c;
+    margin: 150px 0 0 150px;
+    border-radius: 20px 0 0 20px;
+}
+
+.input {
+    border-radius: 5px;
+    background-color: white;
+    border: solid #b0b0b0;
+    font-size: 20px;
+}
+
+.submit {
+    display: inline-block;
+    font-family: fantasy;
+    background-color: #ffffff;
+    padding: 8px;
+    margin: 20px 0 0 70%;
+    font-size: 16px;
+}
+
+#reg {
+    text-decoration: none;
+    color: black;
+}

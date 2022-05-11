@@ -1,0 +1,220 @@
+/*базовые настройки*/
+* { outline: 0; padding: 0; margin: 0; border: 0; }
+html {font-size: 20px;}
+body {box-sizing: border-box;}
+
+/*АДАПТИВ*/
+
+/*ГЛАВНАЯ СТИЛИЗАЦИЯ*/
+
+/*HEADER*/
+.header {
+    /*установка фиксированной позиции*/
+    position: relative;
+    top: 0;
+    height: 160px;
+    width: 100%;
+    background: #5e5e5e;
+    /*применение flex для расположения блоков*/
+    display: flex;
+    justify-content: space-between;
+}
+
+/*расположение элементов по вертикали*/
+.header-text a, .row, .img-list {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+form {
+    display: inline;
+}
+
+/*стилизация ссылок шапки*/
+.header-text a, .row a, .list a {
+    text-decoration: none;
+}
+
+.row a img, #lout img {
+    margin: 0 0.5rem;
+    width: 50px;
+    height: 50px;
+}
+.row a{
+    align-items: center;
+    font-size: 30px;
+    font-family: Boyarsky, sans-serif;
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+}
+/*главная подпись*/
+.header-text {width: 34rem;}
+
+.header-logo img{
+    display: block;
+    width: 140px;
+}
+/*стилизация логотипа сайта*/
+.header-text a {
+    display: block;
+    padding: 0 4rem;
+}
+
+/*меню*/
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    text-align: right;
+}
+.wrapper{
+    position: relative;
+    min-height: 100%;
+}
+.content{
+    padding-bottom: 110px;
+}
+/*FOOTER*/
+.footer {
+    background-color: #5e5e5e;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+}
+
+.footer img {
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.footer-img{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer span {
+    font-family: Circe, sans-serif;
+    font-style: italic;
+    font-size: 22px;
+
+}
+.main-header{
+    text-align: center;
+    padding: 15px;
+}
+/*Слайдер*/
+.main-slider{
+    height: 500px;
+    margin: 100px auto 0;
+    position: relative;
+    width: 1000px;
+}
+.slider {
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+.main-slider > input {
+    display: none;
+}
+.slides {
+    height: inherit;
+    opacity: 0;
+    position: absolute;
+    width: inherit;
+    z-index: 0;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    -moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    -o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+.slider .slides img{
+    display: block;
+    width: 100%;
+}
+.main-slider .controls {
+    left: 50%;
+    margin-left: -98px;
+    position: absolute;
+}
+
+.main-slider label {
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    margin: 25px 12px 0 16px;
+    position: relative;
+    width: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.main-slider label:after {
+    border: 2px solid #ddd;
+    content: " ";
+    display: block;
+    height: 12px;
+    left: -4px;
+    position: absolute;
+    top: -4px;
+    width: 12px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.main-slider label {
+    display: inline-block;
+    height: 8px;
+    margin: 25px 12px 0 16px;
+    position: relative;
+    width: 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: background ease-in-out .5s;
+    -moz-transition: background ease-in-out .5s;
+    -o-transition: background ease-in-out .5s;
+    transition: background ease-in-out .5s;
+}
+
+.main-slider label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+    background: #ddd;
+}
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4{
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+}
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<div class="wrapper">
+    <!--шапка страницы-->
+    <div class="header">
+        <!--главная надпись-->
+        <div class="header-text">
+            <a class="header-logo" href = "/"><img src="image/logo.png"></a>
+        </div>
+        <!--меню-->
+        <div class="menu">
+            <div class="row">
+                <a href="/products">Товары</a>
+                <a sec:authorize="isAnonymous()" href="/login">Login</a>
+                <a id="lout" sec:authorize="isAuthenticated()" href="/logout">Logout</a>
+                <a href="profile/cart-product"><img src="image/cart.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1 class="main-header" th:text="${title}" />
+        <div class="main-slider">
+            <input type="radio" name="point" id="slide1" checked>
+            <input type="radio" name="point" id="slide2">
+            <input type="radio" name="point" id="slide3">
+            <input type="radio" name="point" id="slide4">
+            <div class="slider">
+                <div class="slides slide1"><img src="/image/slide1.jpg"></div>
+                <div class="slides slide2"><img src="/image/slide2.jpg"></div>
+                <div class="slides slide3"><img src="/image/slide3.jpg"></div>
+                <div class="slides slide4"><img src="/image/slide4.jpg"></div>
+            </div>
+            <div class="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-img">
+            <a href="https://vk.com/xenondrs"><img src="image/vk_logo.png" alt="vk"></a>
+            <a href=""><img src="image/git_logo.png" alt="github"></a>
+            <a href=""><img src="image/telegram_logo.png" alt="telegram"></a><br>
+        </div>
+        <span>2022 &#169 Filin Andrey</span>
+    </div>
+</div>
+</body>
+</html>
