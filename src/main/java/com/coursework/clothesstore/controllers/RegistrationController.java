@@ -38,7 +38,7 @@ public class RegistrationController {
         User userFromDB = userService.getUser(user.getUsername());
 
         if (userFromDB != null) {
-            model.addAttribute("error", "Пользователь уже существует! Попробуйте другое имя.");
+            model.addAttribute("error", "Пользователь уже существует!");
             return "registration";
         }
 
